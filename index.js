@@ -21,8 +21,11 @@ function newElement() {
     }
     document.getElementById('toDoEl').value = "";
     let span = document.createElement('SPAN');
-    let txt = document.createTextNode("X");
+    let txt = document.createTextNode("DONE!");
+    
     span.className = "close";
     span.appendChild(txt);
     li.appendChild(span);
 }
+
+
