@@ -3,7 +3,6 @@ let inputTask = document.getElementById('new-task');
 let unfinishedTasks = document.getElementById('unfinished-tasks');
 let finishedTasks = document.getElementById('finished-tasks');
 
-
 function createNewElement(task, finished) {
     let listItem = document.createElement('li');
     let checkbox = document.createElement('button');
@@ -37,6 +36,10 @@ function createNewElement(task, finished) {
     return listItem;
 }
 
+function error() {
+    if (inputTask.value == "") alert("Вы не можете ввести пустое дело(");
+}
+
 function addTask() {
     if (inputTask.value != "") {
         let listItem = createNewElement(inputTask.value, false);
@@ -44,7 +47,7 @@ function addTask() {
         bindTaskEvents(listItem, finishTask)
         inputTask.value = "";
     }
-    else if(inputTask.value == "") alert("Введите ваше дело!");
+    else error();
 }
 addButton.onclick = addTask;
 

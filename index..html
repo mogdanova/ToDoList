@@ -2,19 +2,22 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Список дел</title>
     <link rel="stylesheet" href="material-icons.css">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div class="container">
-        <div>Добавить дело</div>
+    <header>
+        Ваш персональный список дел
+    </header>
+
+    <div class="container" id="mainblock">
+        <title>Ваш персональный список дел</title>
         <input id="new-task" placeholder="Какие планы?" type="text">
         <button id="add">Добавить</button>
-        <h3>Список дел</h3>
+        <h3>Предстоит сделать: </h3>
         <ul id="unfinished-tasks">
         </ul>
-        <h3>Завершенные дела</h3>
+        <h3>Завершённые дела: </h3>
         <ul id="finished-tasks">
         </ul>
     </div>
