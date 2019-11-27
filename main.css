@@ -80,10 +80,12 @@ button:hover {
 }
 
 .info {
+    width: 90%;
+    margin-left: 5%;
     margin-top: 15%;
+    word-wrap: inherit;
     font-size: 20px;
-    font-weight: bold;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h3 {
@@ -156,8 +158,6 @@ li > .delete:hover {
     color: rgb(15, 95, 7);
 }
 
-
-
 ul li input[type=text] {
     display: none;
 }
@@ -174,3 +174,16 @@ button.checkbox {
     float: left;
 }
 
+.lab22_main {
+    position: flex;
+    bottom: 0%;
+}
+
+.mail {
+    margin-top: 9%;
+    background: rgba(11, 228, 235, 0.295);
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    vertical-align: center;
+}

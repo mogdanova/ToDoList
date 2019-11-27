@@ -9,25 +9,24 @@
     <link rel="stylesheet" href="main.css" >
 </head>
 <body>
-<div id="root">
-    <div class="container">
+    <div class="container" id="container">
         <h3 class="first"> 
             <img class="gif1" src="gifach.gif" alt="kitten">
                 Добавить дело
             <img class="gif2" src="gifach.gif" alt="kitten">
         </h3>
-        <input id="new-task" type="text" onchange="console.log(this.value)">
+        <input id="new-task" type="text" onchange="function enter(e){
+            console.log(this.value);}">
         <button id="add">Добавить</button>
-        <h3>Список дел</h3>
-        <ul id="unfinished-tasks">
-        </ul>
+        <h3>Список дел</h3>  
+            <ul id="unfinished-tasks" >
+            </ul>
         <h3>Завершенные дела</h3>
-        <ul id="finished-tasks">
-        </ul>
+            <ul id="finished-tasks" >
+            </ul>
     </div>
-</div>
 <a href="#link" class="link1">Узнать немного больше о ведении ежедневников</a>
-<div class="info" id="link"><pre>
+<div class="info" id="link">
     Общая информация о ежедневниках
     Начать стоит с того, какую вообще направленность может иметь ваш ежедневник. В зависимости от нее, оформление ежедневника может отличаться как внутри, 
     так и снаружи. Обусловлено это тем, что использовать данный инструмент вам должно быть максимально удобно и комфортно. Тем более ведение ежедневника 
@@ -55,8 +54,17 @@
 
     А вообще, сегодня в продаже можно встретить невероятное количество ежедневников, в том числе и узкоспециализированных – рассчитанных под определенные 
     цели «пользователей». Мы не будем подробно на них останавливаться – достаточно пройтись по магазинам и посмотреть, что имеется на прилавках.
-</pre>
 </div>
 <script src="index.js"></script>
+<footer class="lab22_main">
+    <section>
+      <div class="mail">
+          <p color="black" align="center">Могданова Ирина</p>
+          <p>
+            <a href="https://mail.ru/?from=logout">mr.ira2001@gmail.com</a>
+          </p>
+      </div>
+    </section>
+</footer>
 </body>
 </html>

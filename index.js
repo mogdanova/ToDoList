@@ -1,3 +1,4 @@
+"use strict";
 var addButton = document.getElementById('add');
 var inputTask = document.getElementById('new-task');
 var unfinishedTasks = document.getElementById('unfinished-tasks');
@@ -26,6 +27,7 @@ function createNewElement(task, finished) {
     }
 
     label.innerText = task;
+    label.draggable = true;
     input.type = "text";   
     deleteButton.className = "material-icons delete";
     deleteButton.innerHTML = "<i class='material-icons'>delete</i>";
@@ -36,15 +38,6 @@ function createNewElement(task, finished) {
     listItem.appendChild(deleteButton);
     listItem.appendChild(editButton);
     return listItem;
-}
-
-function enter() {
-    document.querySelector('input').addEventListener('keydown', function(e) {
-      if (e.keyCode === 13) {
-        addTask();
-        console.log(this.value);
-      }
-    });
 }
 
 function addTask() {
@@ -155,4 +148,32 @@ for(var i=0; i<data.finishedTasks.length; i++){
     var listItem=createNewElement(data.finishedTasks[i], true);
     finishedTasks.appendChild(listItem);
     bindTaskEvents(listItem, unfinishTask);
+}
+
+var arr = [];
+function allowDrow(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+    ev.dataTransfer.setData("content", ev.target.textContent);
+}
+
+function drop(ev, block) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    var content = ev.dataTransfer.getData("content");
+    if(block.id == "container"){
+        if(arr.indexOf(content) == -1){
+            arr.push(content);
+        }
+    }
+    if(block.id == "container"){
+        if(arr.indexOf(content) != -1){
+           arr.splice(arr.indexOf(content), 1);
+        }
+    }
+    block.appendChild(document.getElementById(data));
+    console.log(arr);
 }
