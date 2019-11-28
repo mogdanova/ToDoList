@@ -3,6 +3,8 @@ var addButton = document.getElementById('add');
 var inputTask = document.getElementById('new-task');
 var unfinishedTasks = document.getElementById('unfinished-tasks');
 var finishedTasks = document.getElementById('finished-tasks');
+var finishedTasksArr = [];
+var unfinishedTasksArr = [];
 
 function createNewElement(task, finished) {
     var listItem = document.createElement('li');
@@ -53,15 +55,12 @@ function addTask() {
 addButton.onclick = addTask;
 
 function deleteTask() {
-    var listItem = this.parentNode;
-    var ul = listItem.parentNode;
     ul.removeChild(listItem);
     save();
 }
 
 function editTask() {
     var editButton = this;
-    var listItem = this.parentNode;
     var label = listItem.querySelector('label');
     var input = listItem.querySelector('input[type=text]');
 
@@ -81,7 +80,6 @@ function editTask() {
 }
 
 function finishTask() {
-    var listItem = this.parentNode;
     var checkbox = listItem.querySelector('button.checkbox');
 
     checkbox.className = "material-icons checkbox";
@@ -93,7 +91,6 @@ function finishTask() {
 }
 
 function unfinishTask() {
-    var listItem = this.parentNode;
     var checkbox = listItem.querySelector('button.checkbox');
 
     checkbox.className = "material-icons checkbox";
@@ -150,7 +147,7 @@ for(var i=0; i<data.finishedTasks.length; i++){
     bindTaskEvents(listItem, unfinishTask);
 }
 
-var arr = [];
+var arr = [];  
 function allowDrow(ev) {
     ev.preventDefault();
 }
@@ -161,19 +158,19 @@ function drag(ev) {
 }
 
 function drop(ev, block) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    var content = ev.dataTransfer.getData("content");
-    if(block.id == "container"){
+    var label = document.createElement('label');
+    var content = ev.dataTransfer.getData("content"); 
+    if(block.id == "div1"){
         if(arr.indexOf(content) == -1){
             arr.push(content);
+            console.log();
         }
     }
-    if(block.id == "container"){
+    if(block.id == "div2"){
         if(arr.indexOf(content) != -1){
-           arr.splice(arr.indexOf(content), 1);
+           finishedTasksArr.splice(arr.indexOf(content), 1);
+           console.log();
         }
     }
-    block.appendChild(document.getElementById(data));
-    console.log(arr);
+    block.appendChild(label);
 }

@@ -14,14 +14,32 @@ body {
     transform: scale(-1, 1);
 }
 
-.container {
+.container{
+    display: block;
+    height: 250px;
+    margin: 100px auto 0;
+    padding: 20px 16px 30px;
+}
+
+#div1 {
     background: rgba(64, 238, 229, 0.7);
     display: block;
-    width: 650px;
-    margin: 100px auto 0;
+    margin-left: 5%;
     border: 2px solid black;
     border-radius: 10px;
     padding: 20px 16px 30px;
+}
+#div2 {
+    background: rgba(64, 238, 229, 0.7);
+    display: block;
+    margin-left: 8%;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px 16px 30px;
+}
+
+#more{
+    padding-top: 10%;
 }
 
 ul {
@@ -46,7 +64,7 @@ input, button {
     color: black;
     font-family: monospace;
     margin-left: 35%;
-    font-size: 18px;
+    font-size: 12px;
 }
 button {
     background: rgba(64, 238, 229, 0.699);
@@ -69,7 +87,7 @@ button:hover {
 }
 
 #add {
-    float: center;
+    float: left;
     background: rgba(149, 241, 226, 0.753);
     height: 40px;
     width: 100px;
@@ -98,7 +116,7 @@ h3 {
 
 .first {
     color: black;
-    text-align: left;
+    text-align: center;
     font-size: 21px;
     text-transform: uppercase;   
 }
@@ -124,7 +142,14 @@ label[for='new-task'] {
 
 input#new-task {
     float: left;
-    width: 510px;
+    height: 50px;
+    width: 650px;
+}
+
+.qqq{
+    display: inline-block;
+    margin-left: 20%;
+    width: 800px;
 }
 
 li {
