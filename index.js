@@ -55,11 +55,14 @@ function addTask() {
 addButton.onclick = addTask;
 
 function deleteTask() {
+    var listItem = this.parentNode;
+    var ul = listItem.parentNode;
     ul.removeChild(listItem);
     save();
 }
 
 function editTask() {
+    var listItem = this.parentNode;
     var editButton = this;
     var label = listItem.querySelector('label');
     var input = listItem.querySelector('input[type=text]');
@@ -80,8 +83,8 @@ function editTask() {
 }
 
 function finishTask() {
+    var listItem = this.parentNode;
     var checkbox = listItem.querySelector('button.checkbox');
-
     checkbox.className = "material-icons checkbox";
     checkbox.innerHTML = "<i class='material-icons'>check_box</i>";
 
@@ -91,6 +94,7 @@ function finishTask() {
 }
 
 function unfinishTask() {
+    var listItem = this.parentNode;
     var checkbox = listItem.querySelector('button.checkbox');
 
     checkbox.className = "material-icons checkbox";
