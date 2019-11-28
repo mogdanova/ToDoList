@@ -116,6 +116,7 @@ function bindTaskEvents(listItem, checkboxEvent) {
 }
 
 function save() {
+    console.log(unfinishedTasks.children);
     var unfinishedTasksArr = [];
     for (var i = 0; i < unfinishedTasks.children.length; i++) {
         unfinishedTasksArr.push(unfinishedTasks.children[i].getElementsByTagName('label')[0].innerText);
@@ -138,6 +139,8 @@ function load(){
 }
 
 var data=load();
+console.log(data);
+
 
 for(var i=0; i<data.unfinishedTasks.length;i++){
     var listItem=createNewElement(data.unfinishedTasks[i], false);
@@ -163,18 +166,45 @@ function drag(ev) {
 
 function drop(ev, block) {
     var label = document.createElement('label');
-    var content = ev.dataTransfer.getData("content"); 
+    var content = ev.dataTransfer.getData("content");
+    console.log(block); 
+    console.log(content);
+    console.log(arr);
+    console.log(finishedTasksArr);
+    console.log(arr.indexOf(content));
+    var unfinishedTasks = JSON.parse(localStorage.getItem('todo')).unfinishedTasks;
+    var finishedTasks = JSON.parse(localStorage.getItem('todo')).finishedTasks;
+    console.log(unfinishedTasks);
+    console.log(finishedTasks)
     if(block.id == "div1"){
-        if(arr.indexOf(content) == -1){
-            arr.push(content);
-            console.log();
-        }
+        // if(unfinishedTasks.indexOf(content) == -1){
+        //     unfinishedTasks.push(content);
+        // }
+        if(unfinishedTasks.indexOf(content) == -1){
+            var index = finishedTasks.indexOf(content);
+            console.log(index);
+            // finishedTasksc
+            unfinishedTasks.push(content);
+            finishedTasks.splice(finishedTasks.indexOf(content), 1);
+            unfinishedTasks
+            addTask();
+         }
     }
     if(block.id == "div2"){
-        if(arr.indexOf(content) != -1){
-           finishedTasksArr.splice(arr.indexOf(content), 1);
-           console.log();
+        if(finishedTasks.indexOf(content) == -1){
+            var index = unfinishedTasks.indexOf(content);
+            console.log(index);
+           // finishedTasksc
+           finishedTasks.push(content);
+           unfinishedTasks.splice(unfinishedTasks.indexOf(content), 1);
         }
     }
+    console.log(unfinishedTasks);
+    console.log(finishedTasks)
     block.appendChild(label);
+    localStorage.setItem('todo', JSON.stringify({
+        unfinishedTasks: unfinishedTasks,
+        finishedTasks: finishedTasks
+    }));
+
 }
