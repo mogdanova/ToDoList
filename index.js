@@ -167,7 +167,7 @@ function drag(ev) {
 
 function drop(ev, block) {
     var label = document.createElement('label');
-    var content = ev.dataTransfer.getData("content");
+    var content = ev.dataTransfer.getData("content"); 
     // console.log(block); 
     // console.log(content);
     // console.log(arr);
