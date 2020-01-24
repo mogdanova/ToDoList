@@ -1,7 +1,22 @@
 body {
-    background-image: url(background.png);
+    background: rgb(255, 255, 176);
     color: black;
     font-family: sans-serif;
+}
+
+img {
+    width: 400px;
+    margin-left: 35%;
+}
+
+h1 {
+    font-family: monospace;
+    margin-left: 45%;
+}
+
+.footer {
+    margin-top: 20%;
+    display: block;
 }
 
 .gif1 {
@@ -14,21 +29,16 @@ body {
     transform: scale(-1, 1);
 }
 
-.container{
-    display: block;
-    height: 250px;
-    margin: 100px auto 0;
-    padding: 20px 16px 30px;
+p {
+    margin-left: 10%;
 }
 
-#div1 {
-    background: rgba(64, 238, 229, 0.7);
-    display: block;
-    margin-left: 5%;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 20px 16px 30px;
+.container{
+    margin-top: 5%;
+    height: auto;
+    width: 90%;
 }
+
 #div2 {
     background: rgba(64, 238, 229, 0.7);
     display: block;
@@ -67,7 +77,7 @@ input, button {
     font-size: 12px;
 }
 button {
-    background: rgba(64, 238, 229, 0.699);
+    background: rgba(64, 238, 229, 0);
     border: 0px;
     color: rgb(0, 0, 0);
     font-size: 15px;
@@ -78,7 +88,7 @@ button {
 }
 
 button:hover {
-    color: rgb(10, 201, 26);
+    color: rgb(10, 23, 201);
     font-weight: bold;
 }
 
@@ -88,13 +98,12 @@ button:hover {
 
 #add {
     float: left;
-    background: rgba(149, 241, 226, 0.753);
     height: 49px;
     width: 100px;
     padding: 10px;
     margin-top: 0;
-    border-radius: 10px;
-    border: 1px solid #000000;
+    font-weight: bold;
+    font-size: large;
 }
 
 .info {
@@ -110,6 +119,14 @@ h3 {
     margin-top: 20px;
     color: black;
     text-align: center;
+    font-size: 21px;
+    text-transform: uppercase;
+}
+
+.h3 {
+    margin-top: 20px;
+    color: black;
+    text-align: left;
     font-size: 21px;
     text-transform: uppercase;
 }
